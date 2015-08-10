@@ -17,14 +17,35 @@ $(document).ready(function(){
             function(){
                 $(this).hide();
                 $(this).css('left', '520px');
-            });
-    })
+            }
+    ); 
+})
     .mouseup(function(){
         $('.ryu-throwing').hide();
         $('.ryu-ready').show();
-    });
+        $('.ryu-still').hide(); 
+        $('.ryu-cool').hide(); 
+    })
 
-});
+$("body").keydown(function(e) {
+	if (e.which == 88) {
+		$('.ryu-cool').show(); 
+		$('.ryu-ready').hide(); 
+		$('.ryu-still').hide(); 
+		$('.hadouken').hide(); 
+	}
+})
+
+$("body").keyup(function(e) {
+	if (e.which == 88) {
+		$('.ryu-cool').hide(); 
+		$('.ryu-ready').hide(); 
+		$('.hadouken').hide(); 
+		$('.ryu-still').show(); 
+	}
+})
+
+}); 
 
 function playHadouken() {
         $('#hadouken-sound')[0].volume = 0.5;
